@@ -32,6 +32,6 @@
   "eslint.alwaysShowStatus": true,
   "prettier.requireConfig": true,
   "terminal.integrated.fontFamily": "Fira Code",
-  "terminal.integrated.fontSize": 10,
+  "terminal.integrated.fontSize": 16,
   "explorer.confirmDelete": false
 }
