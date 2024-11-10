@@ -1,0 +1,129 @@
+# `console.log`
+
+# 🚀 **Mengenal `console.log` di JavaScript**
+
+`console.log` adalah perintah dasar di JavaScript untuk menampilkan pesan atau nilai ke **Console**. Ini sangat berguna untuk debugging, melihat hasil variabel, atau memeriksa alur kode yang sedang dijalankan.
+
+---
+
+## 🎯 **Apa Itu `console.log`?**
+
+`console.log` adalah bagian dari objek `console` di JavaScript, yang digunakan untuk:
+
+- Menampilkan output langsung dari kode yang dieksekusi.
+- Mempermudah debugging dan monitoring variabel.
+- Melacak proses yang berjalan di aplikasi.
+
+Dengan kata lain, `console.log` adalah jendela kecil bagi developer untuk "mengintip" apa yang sedang terjadi di balik layar aplikasi.
+
+---
+
+## 🧩 **Cara Menggunakan `console.log`**
+
+Sintaks sederhana:
+
+```javascript
+console.log("Halo, Dunia!");
+```
+
+### Contoh Lebih Lanjut
+
+`console.log` dapat digunakan untuk mencetak berbagai tipe data:
+
+```javascript
+// String
+console.log("Selamat datang di JavaScript!");
+
+// Number
+console.log(2024);
+
+// Boolean
+console.log(true);
+
+// Array dan Object
+console.log([1, 2, 3]);
+console.log({ nama: "Ogata Rizu", umur: 17 });
+```
+
+---
+
+## ✨ **Kustomisasi `console.log`**
+
+Agar `console.log` tampil lebih keren, tambahkan gaya CSS untuk teks berwarna atau berpola unik di Console!
+
+```javascript
+console.log(
+  "%cIni teks berwarna!",
+  "color: blue; font-size: 20px; font-weight: bold;"
+);
+```
+
+Atau coba lebih kompleks:
+
+```javascript
+console.log(
+  "%cSuccess:",
+  "color: green; font-weight: bold;",
+  "Data berhasil disimpan!"
+);
+console.log(
+  "%cWarning:",
+  "color: orange; font-weight: bold;",
+  "Ada masalah dengan koneksi!"
+);
+console.log(
+  "%cError:",
+  "color: red; font-weight: bold;",
+  "Data tidak ditemukan."
+);
+```
+
+---
+
+## 🎨 **Tips dan Trik `console.log` yang Menarik!**
+
+### 1. Multiple Values
+
+Cetak beberapa nilai dalam satu baris:
+
+```javascript
+const nama = "Ogata Rizu",
+  umur = 17;
+console.log("Nama:", nama, "| Umur:", umur);
+```
+
+### 2. Debugging dengan Label
+
+Gunakan label untuk membuat log lebih jelas:
+
+```javascript
+console.log("⏳ Mulai proses:", new Date());
+```
+
+### 3. Penanda Waktu (`console.time`)
+
+Hitung waktu eksekusi:
+
+```javascript
+console.time("Loop Test");
+for (let i = 0; i < 100000; i++) {}
+console.timeEnd("Loop Test");
+```
+
+---
+
+## 🌟 **Kesimpulan**
+
+`console.log` adalah alat yang sederhana namun sangat kuat dalam pengembangan JavaScript. Dengan `console.log`, kita bisa melacak, menganalisa, dan memperbaiki kode dengan lebih efisien. Jangan ragu untuk bereksperimen dengan gaya dan fungsionalitas tambahan untuk pengalaman debugging yang lebih menarik!
+
+---
+
+### **Praktek**
+
+- [consoleLog.js](consoleLog.js)
+
+### 🔗 **Referensi**
+
+- [MDN Web Docs - console.log](https://developer.mozilla.org/en-US/docs/Web/API/console/log)
+
+Happy coding! 🎉

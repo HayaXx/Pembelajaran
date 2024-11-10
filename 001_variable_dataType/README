@@ -1,0 +1,196 @@
+# `Variable and DataType`
+
+---
+
+# Tipe Data di JavaScript
+
+JavaScript memiliki berbagai tipe data yang digunakan untuk menyimpan informasi dalam variabel. Tipe data dibagi menjadi dua kategori utama: **Primitif** dan **Referensi**. Selain itu, kita juga akan membahas cara mendeklarasikan variabel.
+
+## 1. Variabel dalam JavaScript
+
+Variabel digunakan untuk menyimpan nilai. Di JavaScript, variabel dapat dideklarasikan dengan menggunakan `var`, `let`, atau `const`.
+
+- **`var`**: Digunakan untuk mendeklarasikan variabel yang bersifat function-scoped atau global-scoped. Nilainya bisa diubah.
+- **`let`**: Digunakan untuk mendeklarasikan variabel yang bersifat block-scoped. Nilainya bisa diubah.
+- **`const`**: Digunakan untuk mendeklarasikan variabel yang bersifat block-scoped dan nilainya tidak bisa diubah setelah deklarasi (konstanta).
+
+### Contoh:
+
+```javascript
+// var
+var nama = "Ogata";
+nama = "Rizu"; // Bisa diubah
+
+// let
+let umur = 17;
+umur = 18; // Bisa diubah
+
+// const
+const hobi = "Programming";
+// hobi = "Gaming"; // Error, karena const tidak bisa diubah
+```
+
+## 2. Tipe Data Primitif
+
+Tipe data primitif adalah tipe data dasar yang disimpan langsung dalam variabel, bukan sebagai referensi. Berikut adalah tipe data primitif di JavaScript:
+
+### 2.1. String
+
+String digunakan untuk menyimpan teks atau urutan karakter.
+
+```javascript
+const nama = "Ogata";
+console.log(nama, "Tipe Data:", typeof nama); // Output: string
+```
+
+### 2.2. Number
+
+Number digunakan untuk menyimpan angka, baik yang bulat (integer) atau desimal (floating point).
+
+```javascript
+const umur = 17;
+console.log(umur, "Tipe Data:", typeof umur); // Output: number
+```
+
+### 2.3. Boolean
+
+Boolean hanya memiliki dua nilai: `true` atau `false`.
+
+```javascript
+const isYou = true;
+console.log(isYou, "Tipe Data:", typeof isYou); // Output: boolean
+```
+
+### 2.4. Undefined
+
+Undefined adalah tipe data yang dimiliki oleh variabel yang belum diinisialisasi atau didefinisikan.
+
+```javascript
+let x;
+console.log(x, "Tipe Data:", typeof x); // Output: undefined
+```
+
+### 2.5. Null
+
+Null digunakan untuk menunjukkan bahwa suatu variabel tidak memiliki nilai atau objek.
+
+```javascript
+let human = null;
+console.log(human, "Tipe Data:", typeof human); // Output: object (bug bawaan)
+```
+
+### 2.6. Symbol
+
+Symbol adalah tipe data yang digunakan untuk membuat nilai unik yang tidak dapat dibandingkan dengan nilai lain.
+
+```javascript
+const _symbol = Symbol("title");
+console.log(_symbol, "Tipe Data:", typeof _symbol); // Output: symbol
+```
+
+### 2.7. BigInt
+
+BigInt digunakan untuk menyimpan angka yang lebih besar dari batas yang dapat ditangani oleh tipe data `number`.
+
+```javascript
+const bigInt = 21234313212n;
+console.log(bigInt, "Tipe Data:", typeof bigInt); // Output: bigint
+```
+
+## 3. Tipe Data Referensi
+
+Tipe data referensi adalah tipe data yang menyimpan referensi atau alamat memori tempat data disimpan, bukan nilai itu sendiri. Tipe data referensi termasuk **Object**, **Array**, **Function**, **Date**, dan **RegExp**.
+
+### 3.1. Object
+
+Object digunakan untuk menyimpan koleksi data dalam bentuk pasangan key-value.
+
+```javascript
+const orang = {
+  nama: "Ogata",
+  umur: 17,
+  negara: "Indonesia"
+};
+console.log(orang, "Tipe Data:", typeof orang); // Output: object
+```
+
+### 3.2. Array
+
+Array adalah tipe data khusus yang digunakan untuk menyimpan koleksi data terurut.
+
+```javascript
+const hobby = ["Coding", "Reading"];
+console.log(hobby, "Tipe Data:", typeof hobby); // Output: object
+```
+
+### 3.3. Function
+
+Fungsi juga merupakan objek dalam JavaScript, yang digunakan untuk menjalankan blok kode.
+
+```javascript
+function hai() {
+  return "Hai keknya";
+}
+console.log(hai, "Tipe Data:", typeof hai); // Output: function
+```
+
+### 3.4. Date
+
+Date adalah objek yang digunakan untuk menangani tanggal dan waktu.
+
+```javascript
+const today = new Date();
+console.log(today, "Tipe Data:", typeof today); // Output: object
+```
+
+### 3.5. RegExp (Pattern)
+
+RegExp adalah objek yang digunakan untuk menangani ekspresi reguler (regular expressions), yang digunakan untuk pencocokan pola dalam string.
+
+```javascript
+const pattern = /hello/;
+console.log(pattern, "Tipe Data:", typeof pattern); // Output: object
+```
+
+---
+
+## Ringkasan
+
+- **Tipe Data Primitif** menyimpan nilai itu sendiri, yang meliputi `String`, `Number`, `Boolean`, `Undefined`, `Null`, `Symbol`, dan `BigInt`.
+- **Tipe Data Referensi** menyimpan alamat memori tempat data disimpan, yang meliputi `Object`, `Array`, `Function`, `Date`, dan `RegExp`.
+- Pemahaman tentang variabel dan tipe data sangat penting untuk pengembangan aplikasi dan pemrograman JavaScript secara umum.
+
+---
+
+## Perbedaan Utama Tipe Primitive vs reference
+
+- **Penyimpanan:** Tipe data primitif disimpan di stack memory dengan nilai langsungnya, sedangkan reference types disimpan di heap memory dan variable hanya menyimpan referensi ke data tersebut
+- **Perubahab Nilai:** Pada tipe data primitif, mengubah nilai variable tidak mempengaruhi variable lain yang menyimpan salinan nilai tersebut. Sedangkan pada reference types, mengubah data melalui satu variable akan mempengaruhi variable lain yang menunjukan ke objek yang sama
+- **Kinerja:** Operasi pada tipe data primitive biasanya lebih cepat dan menggunakan lebih sedikit memori dibandingkan reference types karena penyimpanan akses langsung ke nilai
+
+---
+
+## PRAKTEK
+
+1. **VARIABLE & DATATYPE**
+   - [variable.js](./variable.js)
+   - [dataType_primitive.js](./dataType_primitive.js)
+   - [dataType_primitivreference.js](./dataType_referance.js)
+
+---
+
+## Referensi:
+
+1. **MDN Web Docs: Tipe Data di JavaScript**
+   - [Tipe Data Primitif](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values)
+   - [Tipe Data Referensi](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#objects)
+   - [Variabel dalam JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+2. **JavaScript Info**
+   - [Tipe Data di JavaScript](https://javascript.info/types)
+   - [Perbedaan antara `let`, `const`, dan `var`](https://javascript.info/var)
+3. **W3Schools: JavaScript Data Types**
+   - [JavaScript Data Types](https://www.w3schools.com/js/js_datatypes.asp)
+4. **Eloquent JavaScript (Buku)**
+   - [Tipe Data dan Variabel](https://eloquentjavascript.net/)
+
+---

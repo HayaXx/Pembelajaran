@@ -1,0 +1,174 @@
+Berikut adalah beberapa konfigurasi keren dan estetik yang bisa kamu gunakan di folder `.vscode` untuk meningkatkan pengalaman pengembangan JavaScript di Visual Studio Code. Konfigurasi ini akan memberikan pengaturan kompleks yang membuat tampilan kode lebih rapi, efisien, dan stylish.
+
+### 1. **File `settings.json`**
+
+File `settings.json` berfungsi untuk mengatur tampilan dan fitur Visual Studio Code secara khusus untuk proyek ini. Pengaturan di bawah ini mencakup indentasi otomatis, format kode, shortcut khusus, dan tema warna.
+
+```json
+{
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.wordWrap": "on",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.fontFamily": "'Fira Code', 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.minimap.enabled": true,
+    "editor.minimap.size": "fit",
+    "editor.minimap.maxColumn": 80,
+    "editor.guides.bracketPairs": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true
+    },
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "material-icon-theme",
+    "javascript.suggest.autoImports": true,
+    "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+    "files.autoSave": "onWindowChange",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/coverage": true
+    },
+    "eslint.alwaysShowStatus": true,
+    "prettier.requireConfig": true,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontSize": 14,
+    "explorer.confirmDelete": false
+}
+```
+
+> 🔥 **Penjelasan Singkat:**
+- `editor.tabSize`, `editor.detectIndentation`: Mengatur indentasi dengan ukuran tab yang konsisten.
+- `editor.formatOnSave`, `editor.formatOnPaste`, `editor.formatOnType`: Memastikan kode selalu terformat otomatis saat disimpan atau ditempel.
+- `editor.guides.bracketPairs` dan `editor.bracketPairColorization.enabled`: Mengaktifkan warna pada bracket pairs untuk membaca kode lebih mudah.
+- `workbench.colorTheme`, `workbench.iconTheme`: Mengatur tema warna yang stylish (dalam contoh ini `One Dark Pro`).
+- `files.exclude`: Menyembunyikan folder atau file tertentu dari explorer untuk fokus pada file yang relevan.
+- `eslint.alwaysShowStatus` dan `prettier.requireConfig`: Mengaktifkan integrasi ESLint dan Prettier untuk linting dan format kode otomatis.
+  
+---
+
+### 2. **File `jsconfig.json`**
+
+File `jsconfig.json` membantu untuk mengonfigurasi JavaScript di VS Code, memberikan informasi tentang cakupan file dan mempercepat auto-import. Konfigurasi berikut ini membuat lingkungan pengembangan lebih cerdas dengan IntelliSense dan linting.
+
+```json
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "checkJs": true,
+        "allowSyntheticDefaultImports": true,
+        "noEmit": true
+    },
+    "include": ["src/**/*", "tests/**/*"],
+    "exclude": ["node_modules", "dist"]
+}
+```
+
+> 🔥 **Penjelasan Singkat:**
+- `compilerOptions.target`, `compilerOptions.module`: Mengatur target dan modul ke versi terbaru untuk kompatibilitas dengan fitur modern.
+- `paths`: Menyederhanakan impor modul menggunakan alias (`@/`), sehingga kamu bisa mengimpor file dari folder `src` dengan lebih rapi.
+- `checkJs`: Mengaktifkan pengecekan tipe dan linting langsung pada file JavaScript.
+- `include` dan `exclude`: Mengatur folder yang dicakup dan dikecualikan untuk memastikan hanya file yang dibutuhkan saja yang diperhatikan oleh Visual Studio Code.
+
+---
+
+### 3. **File `.eslint.json`**
+
+Integrasikan ESLint agar Visual Studio Code otomatis memperbaiki kesalahan syntax, menjaga konsistensi gaya, dan memenuhi standar yang kamu inginkan. Pengaturan ini membuat kode JavaScript lebih terstruktur, rapi, dan efisien.
+
+```json
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": ["error", 2],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        "no-console": "warn",
+        "no-unused-vars": "warn",
+        "prefer-const": "error"
+    }
+}
+```
+
+> 🔥 **Penjelasan Singkat:**
+- `extends`: Menggunakan rekomendasi dasar ESLint dan Prettier.
+- `rules`: Menyusun aturan linting, seperti menggunakan tanda kutip tunggal, mengharuskan penggunaan `const`, dan memberikan peringatan jika ada `console.log` atau variabel yang tidak digunakan.
+
+---
+
+### 4. **File `.prettierrc`**
+
+Konfigurasi Prettier membantu mengatur gaya penulisan kode secara otomatis saat menyimpan atau memformat kode.
+
+```json
+{
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "always"
+}
+```
+
+> 🔥 **Penjelasan Singkat:**
+- `singleQuote`: Memastikan semua string menggunakan tanda kutip tunggal untuk konsistensi.
+- `trailingComma`: Memasang koma di akhir setiap properti atau elemen array untuk mengurangi potensi kesalahan sintaks.
+- `arrowParens`: Memastikan fungsi panah selalu memiliki tanda kurung pada argumennya, meningkatkan keterbacaan.
+
+---
+
+### 5. **File `launch.json` (opsional)**
+
+Jika kamu ingin melakukan debugging langsung di Visual Studio Code, `launch.json` dapat membantu kamu mengonfigurasi proses debug secara langsung.
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/src/index.js",
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+        }
+    ]
+}
+```
+
+> 🔥 **Penjelasan Singkat:**
+- `program`: Menentukan file utama yang dijalankan saat debugging.
+- `outFiles`: Mengatur folder keluaran yang akan di-debug untuk proyek berbasis bundler (seperti Webpack atau Babel).
+
+---
+
+Dengan pengaturan di atas, proyek kamu akan terlihat lebih estetik, lebih mudah dikelola, dan rapi. Setiap konfigurasi dirancang untuk meningkatkan efisiensi, menjaga konsistensi gaya, dan membuat tampilan lebih profesional.

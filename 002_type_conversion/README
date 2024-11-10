@@ -1,0 +1,99 @@
+# `Type Conversion di JavaScript`
+
+**Type Conversion** atau konversi tipe data adalah proses mengubah suatu tipe data menjadi tipe data lain dalam JavaScript. Konversi ini bisa dilakukan secara otomatis (implicit) atau manual (explicit).
+
+## 1. Implicit Conversion (Type Coercion)
+
+Konversi ini dilakukan otomatis oleh JavaScript berdasarkan konteks operasi. Contoh yang umum terjadi adalah saat operasi aritmatika antara **String** dan **Number**, serta saat penggunaan **Boolean** dalam operasi matematika.
+
+### Contoh:
+```javascript
+// String + Number
+let result = "5" + 2;
+console.log(result); // Output: "52" (Number 2 dikonversi ke String)
+
+// String - Number
+result = "10" - 2;
+console.log(result); // Output: 8 (String "10" dikonversi ke Number)
+
+// Boolean + Number
+result = true + 3;
+console.log(result); // Output: 4 (true dikonversi ke 1)
+```
+
+### Catatan:
+1. **Penjumlahan** antara string dan number akan mengonversi number menjadi string dan melakukan penggabungan (concatenation).
+2. **Pengurangan**, **perkalian**, dan **pembagian** string dengan number akan mengonversi string menjadi number secara otomatis.
+
+---
+
+## 2. Explicit Conversion
+
+Explicit Conversion dilakukan secara manual menggunakan fungsi bawaan untuk mengonversi tipe data tertentu ke tipe lain. Berikut beberapa metode konversi yang sering digunakan:
+
+### a. Konversi ke String
+
+Menggunakan `String()` atau `.toString()` untuk mengubah tipe data menjadi string.
+
+```javascript
+let num = 123;
+console.log(String(num)); // Output: "123"
+console.log((456).toString()); // Output: "456"
+```
+
+### b. Konversi ke Number
+
+Menggunakan `Number()`, `parseInt()`, atau `parseFloat()` untuk mengubah tipe data menjadi angka.
+
+```javascript
+let str = "100";
+console.log(Number(str)); // Output: 100
+
+let floatStr = "45.67";
+console.log(parseInt(floatStr)); // Output: 45
+console.log(parseFloat(floatStr)); // Output: 45.67
+```
+
+> **Catatan**: 
+> - `parseInt()` mengonversi ke bilangan bulat, mengabaikan nilai desimal.
+> - `parseFloat()` mengonversi ke angka desimal.
+
+### c. Konversi ke Boolean
+
+Menggunakan `Boolean()` untuk mengonversi nilai menjadi boolean. Nilai yang dianggap "falsy" akan menjadi `false`, sedangkan nilai lain akan menjadi `true`.
+
+```javascript
+console.log(Boolean(0)); // Output: false
+console.log(Boolean("")); // Output: false
+console.log(Boolean("hello")); // Output: true
+```
+
+> **Falsy Values** di JavaScript: `0`, `null`, `undefined`, `NaN`, dan `""` (string kosong).
+
+---
+
+## Ringkasan Contoh Konversi:
+
+```javascript
+// Implicit Conversion
+console.log("5" + 10); // "510"
+console.log("5" - 10); // -5
+console.log(true + 2); // 3
+
+// Explicit Conversion
+console.log(Number("123")); // 123
+console.log(String(100)); // "100"
+console.log(Boolean(1)); // true
+```
+
+---
+
+## Referensi
+
+Untuk informasi lebih lanjut, silakan merujuk pada referensi berikut:
+- [MDN Web Docs - Type Conversion](https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion)
+- [JavaScript Guide - Type Conversions and Coercion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#type_conversions)
+- [JavaScript Data Types and Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
+- [JavaScript Implicit and Explicit Type Conversion](https://www.digitalocean.com/community/tutorials/js-type-conversion)
+
+---
